@@ -5,9 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timerliy</title>
 </head>
+<style>
+    #timerContainer{
+        background-color: rgb(167, 167, 255);
+        width: 30%;
+        height: 80vh;
+        border-radius: 20px;
+        padding: 20px 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        margin-top: 30px;
+    }
+    #diplay{
+        display: flex;
+        /* border: 1px solid red; */
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    span{
+        font-size: 70px;
+    }
+    #inputs{
+        /* border: 1px solid red; */
+        width: 100%;
+
+        height: 40vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    input{
+        padding: 13px 20px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    button{
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+</style>
 <body>
-    <h1>Timer</h1>
-    <h2>Authore hussain shamim</h2>
-    <h5>kia hua abhi tak addnhi hua </h5>
+   <section id="timerContainer">
+    <div id="diplay">
+        <span id="hours">00</span> <span>:</span>
+        <span id="minute">00</span> <span>:</span>
+        <span id="second">00</span>
+    </div>
+    <div id="inputs">
+        <input type="number" placeholder="hours">
+        <input type="number" placeholder="minute">
+        <input type="number" placeholder="second">
+    </div>
+    <div id="buttons">
+        <button onclick="start(this)">start</button>
+        <button onclick="stop(this)">push</button>
+        <button onclick="reset(this)">reset</button>
+    </div>
+   </section>
 </body>
 </html>
