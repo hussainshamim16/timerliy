@@ -5,19 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple JavaScript Timer</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        :root{
+            --pink: #ff7a8a;
+            --whiter:#f9f9f9;
+            --dark:#062743;
+            --light: #113a5d;
+        }
+        *{
+
+            font-family: "Poppins", sans-serif;
+        }
         body {
-            font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
-            background-color: rgb(126, 45, 45);
-            color: white;
+            background-color:var(--whiter);
+            color: var(--dark);
         }
+        #container{
+            /* border: 1px solid red; */
+            width: 50%;
+            height: 70vh;
+            padding: 20px 10px;
+            border-radius: 20px;
+            box-shadow: 10px 20px 10px 3px #0202024d;
+
+            margin: 0px auto;
+            margin-top: 70px;
+            text-align: center;
+
+           
+        }
+h1{
+    color:black;
+    text-transform:capitalize;
+}
         input {
             
             font-size: 1.2em;
             padding: 17px 20px;
             border-radius: 50px;
             border: none;
+            /* background-color: black; */
+            width: 60%;
+            box-shadow: 0px 0px 10px 3px #0202022a;
+        }
+       
+        #timerDisplay{
+            /* border: 1px solid red; */
+            display: inline-block;
+            width: 50%;
+            padding: 30px;
+            border-radius: 50px;
+            background-color: var(--light);
+            color: var(--whiter);
         }
         button {
             padding: 17px 20px;
@@ -25,25 +66,46 @@
             border: none;
             font-size: 1.2em;
             margin-top: 10px;
+            background-color: var(--pink);
+            color: white;
+            font-weight: 700;
         }
-        #timerDisplay{
-            /* border: 1px solid red; */
-            display: inline-block;
-            width: 30%;
-            padding: 30px;
-            border-radius: 20px;
-            background-color: lightseagreen;
+        @media only screen and (max-width: 600px){
+            #container{
+            
+            width: 90%;
+                
+            }
+            h1{
+                font-size: 30px;
+            }
+input{
+    width: 70%;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+#timerDisplay{
+    width: 85%;
+    padding: 19px 15px;
+    font-size: 15px;
+}
+button{
+    font-size: 18px;
+    padding: 15px 18px;
+}
         }
     </style>
 </head>
 <body>
+    <div id="container">
+        <h1>timerliy</h1>
+        <p id="timerDisplay"></p>
+        <p>Enter the time in seconds:</p>
+        <input type="number" id="timeInput" placeholder="Seconds" min="1">
+        <br>
+        <button onclick="startTimer()" id="bt">Start Timer</button>
+    </div>
     
-    <h1>Simple Timer</h1>
-    <p id="timerDisplay"></p>
-    <p>Enter the time in seconds:</p>
-    <input type="number" id="timeInput" placeholder="Seconds" min="1">
-    <br>
-    <button onclick="startTimer()" id="bt">Start Timer</button>
 
     <script src="./script.js">
         </script>
