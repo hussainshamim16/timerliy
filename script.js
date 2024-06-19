@@ -1,32 +1,31 @@
-console.log("red");
-
-var timerContainer = document.getElementById("timerContainer");
-var diplay = document.getElementById("diplay");
-var hours = document.getElementById("hours");
-var minute = document.getElementById("minute");
-var second = document.getElementById("second");
-var inputs = document.getElementById("inputs");
-var hoursInputs = document.getElementById("hoursInputs");
-var minuteInputs = document.getElementById("minuteInputs");
-var secondInputs = document.getElementById("secondInputs");
-var buttons = document.getElementById("buttons");
-
-// hours.innerHTML = ""
-// hours.innerHTML = ""
-// hours.innerHTML = ""
 
 
 
 
 
-function start(absd){
-   hours.innerHTML =  hoursInputs.value,"00"
-   minute.innerHTML = minuteInputs.value,"00"
-   second.innerHTML = secondInputs.value,"00"
-}
+function startTimer() {
+   
+   let timeInput = document.getElementById('timeInput').value;
+   let time = parseInt(timeInput); // Converting the input to an integer
 
-function reset(eleme){
-   hours.innerHTML = "00"
-   minute.innerHTML = "00"
-   second.innerHTML = "00"
+  
+   if (isNaN(time) || time <= 0) {
+       document.getElementById('timerDisplay').innerText = "Please enter a valid number.";
+       return;
+   }
+
+   
+   document.getElementById('timerDisplay').innerText = `Time remaining: ${time} seconds`;
+   let countdown = setInterval(function() {
+       time--; 
+       document.getElementById('timerDisplay').innerText = `Time remaining: ${time} seconds`;
+       document.getElementById('bt').disabled = true;
+
+
+       
+       if (time <= 0) {
+           clearInterval(countdown);
+           document.getElementById('timerDisplay').innerText = "Time's up!";
+       }
+   }, 1000); 
 }
